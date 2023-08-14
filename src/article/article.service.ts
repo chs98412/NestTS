@@ -19,7 +19,11 @@ export class ArticleService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} article`;
+    return this.articleRepository.findOne({
+      where: {
+        id
+      }
+    });
   }
 
   update(id: number, updateArticleDto: UpdateArticleDto) {
