@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ArticleModule } from './article/article.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {Article} from "./article/entities/article.entity";
+import { CommentModule } from './comment/comment.module';
+import {Comment} from "./comment/entities/comment.entity";
 
 
 @Module({
@@ -14,9 +16,9 @@ import {Article} from "./article/entities/article.entity";
     username: 'root',
     password: 'Chlgurtns98!',
     database: 'test',
-    entities: [Article],
+    entities: [Article,Comment],
     synchronize: true,
-  })],
+  }), CommentModule],
   controllers: [AppController],
   providers: [AppService],
 })
